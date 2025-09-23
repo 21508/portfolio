@@ -1,0 +1,260 @@
+/* --- Основни променливи --- */
+:root {
+  --main-color: #005f73;
+  --accent-color: #0a9396;
+  --text-color: #333;
+  --background-color: #e9d8a6;
+  --font-primary: 'Arial', sans-serif;
+  --font-secondary: 'Georgia', serif;
+}
+
+/* --- Основни стилове --- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-secondary);
+  margin-bottom: 0.5em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Навигация --- */
+header {
+  background-color: var(--main-color);
+  padding: 1em 2em;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+nav a.active {
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* --- Секции и оформление --- */
+section {
+  margin: 2em auto;
+  max-width: 900px;
+  padding: 1em;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* --- Flexbox за About --- */
+.about-container {
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.about-container img {
+  width: 40%;
+  border-radius: 10px;
+}
+
+/* --- Списъци с хобита --- */
+ul.hobbies {
+  list-style-type: square;
+  padding-left: 1.2em;
+}
+
+/* --- Таблица за образование --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+
+th, td {
+  padding: 0.75em;
+  border: 1px solid #ccc;
+  text-align: left;
+  font-family: var(--font-primary);
+}
+
+/* --- Статии за опит --- */
+article {
+  background: #f0f0f0;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 6px;
+}
+
+/* --- Grid за проекти --- */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5em;
+}
+
+.project-card {
+  background: white;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-card img {
+  border-radius: 6px;
+  margin-bottom: 0.5em;
+}
+
+.project-card h3 {
+  margin: 0.5em 0;
+}
+
+.project-card p {
+  flex-grow: 1;
+}
+
+.project-card a.button {
+  background-color: var(--main-color);
+  color: white;
+  text-align: center;
+  padding: 0.5em;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.project-card a.button:hover {
+  background-color: var(--accent-color);
+}
+
+/* --- Форма за контакт --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 500px;
+  margin: auto;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: var(--font-primary);
+  resize: vertical;
+}
+
+form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5em;
+}
+
+form button {
+  background-color: var(--main-color);
+  color: white;
+  border: none;
+  padding: 0.75em;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+form button:hover {
+  background-color: var(--accent-color);
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--main-color);
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+  margin-top: 2em;
+}
+
+footer a {
+  color: white;
+  margin: 0 0.5em;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--accent-color);
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1em;
+  }
+  
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .about-container img {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- Анимации --- */
+h1 {
+  opacity: 0;
+  animation: fadeInText 2s forwards;
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+  }
+}
